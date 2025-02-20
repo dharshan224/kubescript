@@ -42,3 +42,32 @@ spec:
           ports:
             - containerPort: 80
  ```
+ ```
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: amazon
+spec:
+  replicas: 3
+  selector:
+    matchExpressions:
+      - {key: myname, operator: In, values: [signup, login, home]}
+      - {key: env, operator: NotIn, values: [amazon]}
+  template:
+    metadata:
+      name: devops
+      labels:
+        myname: signup
+    spec:
+      containers:
+        - name: signup
+          image: httpd
+          ports:
+            - containerPort: 80
+```
+
+
+
+
+
+
