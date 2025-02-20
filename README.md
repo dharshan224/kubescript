@@ -42,7 +42,8 @@ spec:
           ports:
             - containerPort: 80
  ```
--- ReplicaSet
+
+- ReplicaSet
  ```
 apiVersion: apps/v1
 kind: ReplicaSet
