@@ -19,7 +19,7 @@
   metadata:
     name: dev
   ```
-- ggvg
+- ReplicationController
 
 ```
 apiVersion: v1
@@ -42,6 +42,7 @@ spec:
           ports:
             - containerPort: 80
  ```
+-- ReplicaSet
  ```
 apiVersion: apps/v1
 kind: ReplicaSet
