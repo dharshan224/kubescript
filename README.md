@@ -20,7 +20,25 @@
     name: dev
   ```
 - ggvg
- ```
-          kcmkwnnwciw
- ```
 
+```
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: flipkart
+spec:
+  replicas: 2
+  selector:
+    app: nginx
+  template:
+    metadata:
+      name: dev
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: login
+          image: nginx
+          ports:
+            - containerPort: 80
+ ```
